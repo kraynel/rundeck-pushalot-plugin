@@ -1,0 +1,51 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.dtolabs.rundeck</groupId>
+  <artifactId>rundeck-pushalot-notification-plugin</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <scm>
+    <url>https://github.com/kraynel/rundeck-pushalot-plugin</url>
+    <connection>scm:git:ssh://git@github.com/kraynel/rundeck-pushalot-plugin.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/kraynel/rundeck-pushalot-plugin.git</developerConnection>
+  </scm>
+  
+  <name>rundeck-pushalot-notification-plugin</name>
+  <url>https://github.com/kraynel/rundeck-pushalot-plugin</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+        <groupId>org.rundeck</groupId>
+        <artifactId>rundeck-core</artifactId>
+        <version>1.6.2</version>
+        <scope>compile</scope>
+    </dependency>
+  </dependencies>
+  
+  <build>
+  	<plugins>
+  		<plugin>
+  			<groupId>org.apache.maven.plugins</groupId>
+  			<artifactId>maven-jar-plugin</artifactId>
+  			<version>2.3.2</version>
+  			<configuration>
+	  			<archive>
+	  				<manifestEntries>
+	  					<Rundeck-Plugin-Classnames>org.rundeck.notification.PushalotNotification</Rundeck-Plugin-Classnames>
+	  					<Rundeck-Plugin-File-Version>${version}</Rundeck-Plugin-File-Version>
+	  					<Rundeck-Plugin-Version>1.1</Rundeck-Plugin-Version>
+	  					<Rundeck-Plugin-Archive>true</Rundeck-Plugin-Archive>
+	  				</manifestEntries>
+	  			</archive>
+  			</configuration>
+  		</plugin>
+  	</plugins>
+  </build>
+</project>
